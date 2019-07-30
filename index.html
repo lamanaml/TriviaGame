@@ -16,21 +16,28 @@
                     <p class="lead">Welcome to the Food Trivia Game. </p>
                     <hr class="my-4">
                     <p>Guess the answer to as many questions as you can before time runs out!</p>
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Start</a>
+                    <a id="startTimer" class="btn btn-primary btn-lg" href="#" role="button">Start</a>
+                    <div class="scores">
+                        <div class="card  " id="time"></div>
+                        <div id="correct"></div>
+                        <div id="incorrect"></div>
+                        <div id="unanswered"></div>
+                      <div id="question"></div>
+                        </div>
                     </div>
               </div>
             <div class="col-6">
                 <div class="jumbotron" class="all-questions">
                     <p class="question">What ingredient makes bread rise?</p>
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary active">
-                            <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
+                            <label class="btn btn-secondary ">
+                            <input type="radio" name="q1" id="option1" autocomplete="off" > yeast
+                            </label>    
+                            <label class="btn btn-secondary">
+                            <input type="radio" name="q1" id="option2" autocomplete="off"> honey
                             </label>
                             <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option2" autocomplete="off"> Radio
-                            </label>
-                            <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option3" autocomplete="off"> Radio
+                            <input type="radio" name="q1" id="option3" autocomplete="off"> baking soda
                             </label>
                         </div>
 
@@ -139,6 +146,9 @@
             </div>
         </div>
     </div>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="assets/javascript/app.js"></script>
   </body>
 </html>
