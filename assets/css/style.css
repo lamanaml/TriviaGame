@@ -6,6 +6,7 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     background-attachment: fixed;
+    background-color:grey;
 }
 
 .jumbotron {
@@ -17,5 +18,5 @@ body {
     margin-top:10px;
 }
 .container {
-    margin-top:150px;
+    margin-top:100px;
 }
