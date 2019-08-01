@@ -2,151 +2,36 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>title</title>
+    <title>Food Trivia Game</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 
   </head>
-  <body>
+  <body >
     <div class="container">
           <div class="row">
-              <div class="col-6">
+              <div class="col-5">
                   <div class="jumbotron">
-                    <h1 class="display-4">Food Trivia!</h1>
-                    <p class="lead">Welcome to the Food Trivia Game. </p>
+                    <h1 >Food Trivia!</h1>
+                    <p >Welcome to the Food Trivia Game. </p>
                     <hr class="my-4">
                     <p>Guess the answer to as many questions as you can before time runs out!</p>
                     <a id="startTimer" class="btn btn-primary btn-lg" href="#" role="button">Start</a>
-                    <div class="scores">
-                        <div class="card  " id="time"></div>
-                        <div id="correct"></div>
-                        <div id="incorrect"></div>
-                        <div id="unanswered"></div>
-                      <div id="question"></div>
-                        </div>
-                    </div>
-              </div>
-            <div class="col-6">
-                <div class="jumbotron" class="all-questions">
-                    <p class="question">What ingredient makes bread rise?</p>
-                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary ">
-                            <input type="radio" name="q1" id="option1" autocomplete="off" > yeast
-                            </label>    
-                            <label class="btn btn-secondary">
-                            <input type="radio" name="q1" id="option2" autocomplete="off"> honey
-                            </label>
-                            <label class="btn btn-secondary">
-                            <input type="radio" name="q1" id="option3" autocomplete="off"> baking soda
-                            </label>
-                        </div>
-
-                    <p class="question">What is the main ingredient used in guacamole?</p>
-                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary active">
-                            <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
-                            </label>
-                            <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option2" autocomplete="off"> Radio
-                            </label>
-                            <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option3" autocomplete="off"> Radio
-                            </label>
-                        </div>
-                
-                    <p class="question">What food does the Giant Panda mainly eat?</p>
-                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary active">
-                            <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
-                            </label>
-                            <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option2" autocomplete="off"> Radio
-                            </label>
-                            <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option3" autocomplete="off"> Radio
-                            </label>
-                        </div>
-                
-                    <p class="question">What are the four main ingredients of a Waldorf salad?</p>
-                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary active">
-                            <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
-                            </label>
-                            <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option2" autocomplete="off"> Radio
-                            </label>
-                            <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option3" autocomplete="off"> Radio
-                            </label>
-                        </div>
-                    <p class="question">What is the main ingredient of Hummus?</p>
-                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary active">
-                            <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
-                            </label>
-                            <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option2" autocomplete="off"> Radio
-                            </label>
-                            <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option3" autocomplete="off"> Radio
-                            </label>
-                        </div>
-                                    
-                    <p class="question">What is Tofu made of?</p>
-                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary active">
-                            <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
-                            </label>
-                            <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option2" autocomplete="off"> Radio
-                            </label>
-                            <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option3" autocomplete="off"> Radio
-                            </label>
-                        </div>
-                    <p class="question">Which country does parmesan cheese originate from?</p>
-                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary active">
-                            <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
-                            </label>
-                            <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option2" autocomplete="off"> Radio
-                            </label>
-                            <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option3" autocomplete="off"> Radio
-                            </label>
-                        </div>
+                    <div class="card" id="time"></div>
                     
-                    
-                    <p class="question">Fajitas are widely eaten in which country?</p>
-                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary active">
-                            <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
-                            </label>
-                            <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option2" autocomplete="off"> Radio
-                            </label>
-                            <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option3" autocomplete="off"> Radio
-                            </label>
-                        </div>
-                    <p class="question">Which vegetable is zucchini better known as?</p>
-                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary active">
-                            <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
-                            </label>
-                            <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option2" autocomplete="off"> Radio
-                            </label>
-                            <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option3" autocomplete="off"> Radio
-                            </label>
-                        </div>
-                </div>
+                       
             </div>
+                </div>
+                <div class="col-7">
+                    <div class="jumbotron" class="all-questions">
+                    <div id="questionDiv"></div>
+                    <div id="done"></div>
+                  </div> 
+              </div>
+            </div>
+            
         </div>
     </div>
-    
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="assets/javascript/app.js"></script>
