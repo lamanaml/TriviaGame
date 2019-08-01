@@ -18,80 +18,53 @@ var correctVar = 0;
 var incorrectVar = 0;
 var unansweredVar = 0;
 
-var counter = 30;
 var timer;
+        
 
+$("#startTimer").on("click",function() {
+   $("#startTimer").remove();
+   game.start()
 
-$("#startTimer").on("click", function(){ 
-
-var question = questionsArray[currentQuestion].q;
-var choices = questionsArray[currentQuestion].choices;
-
-$("#question").html('<div class="card">'+ question + '</div>');
-$("#question").append('<p>'+ loadChoices(choices) + '</p>');
-);
-
-
-console.log(loadChoices(choices))
-counter = setTimeout(timeUp, 1000 * 10);
-$("#time").html("Time Remaining: " + counter); 
-
+    for(var i = 0; i < questionsArray.length; i++){
+      $("#questionDiv").append('<h2>'+questionsArray[i].q+'<h2>')
+      for(var j = 0; j < questionsArray[j].choices.length; j++){
+        $("#questionDiv").append(" <input type='radio' data-answer= " + questionsArray[i].a + " name='question-" + i + "' value='" + questionsArray[i].choices[j] + "' > " + questionsArray[i].choices[j])
+      }
+    }
  })
 
-function loadChoices(choices) {
-  for (i = 0; i < choices.length; i++) {
-  var result +=  '<p class="choice" data-answer="${choices[i]}">${cgiuces[i]}</p>';
-  }
 
-//   //newChoice.text(currentChoices);
-//  // $("#btn").append(questionsArray[i].choices);
-return result;
-//   }
-// }
-  
-// function loadChoices(choices) {
-//   var newQuestion = ""
-//       for (i = 0; i < questionsArray.length; i++) {
-//       //questionDiv = $("#question");
-//       var newQuestion = $("<div data-answer='{choices[i]}'>{choices[i]}</div>").addClass("card");
-//        return newQuestion  
-       
-         
-//       }
-// }
-//      
-//***********list questions on the page with all possible answers
-   
-        
-        
-        
-        
-       
-        
-        
-        //var options = questionsArray[j].choices;
-        // for (var opt in options) {
-        //     //create radiobutton
-        //     //append radiobutton to a div 
-        // }
-        //$("question").text(currentQuestion);
-        //console.log(currentQuestion)
-//     }
+var game = {
+  correct: 0,
+  incorrect: 0,
+  counter: 120,
+  countdown: function(){
+    game.counter--;
+    $('#time').html("Time Remaining: " + game.counter);
+    if(game.counter<=0){
+        console.log("Time is Up!");
+        game.done();
+    }
+  },
+start: function(){
+  timer = setInterval(game.countdown, 1000);
+  $("#startTimer").on("click",function() {
+    $("#startTimer").remove();
+  game.start()
 
-   
-// });
-// //**************end of timer */
-function timeUp() {    
-$("#time").html("<h2>Time's Up!</h2>");
+  for(var i = 0; i < questionsArray.length; i++){
+      $("#questionDiv").append('<h2>'+questionsArray[i].q+'<h2>')
+      for(var j = 0; j < questionsArray[j].choices.length; j++){
+         $("#questionDiv").append(" <input type='radio' data-answer= " + questionsArray[i].a + " name='question-" + i + "' value='" + questionsArray[i].choices[j] + "' > " + questionsArray[i].choices[j])
+      }
+    }
+ })        
 }
+}
+          
+ 
 
-      
-
-
-// *************begin Psuedocode *********************
-
-//***********limit users selection to only 1 answer
-
+   
 //***********once answer is selected, check to see if the answer is correct.
 //***********unansweredvar = # of questions
 // ***********if correct correctvar ++ && unansweredvar --
