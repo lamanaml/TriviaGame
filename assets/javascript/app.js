@@ -21,30 +21,52 @@ var unansweredVar = 0;
 var counter = 30;
 var timer;
 
-//***********once user clicks start, countdown starts
-$("#startTimer").on("click", function(){  
-  counter = setTimeout(timeUp, 1000 * 10);
-//***********shows the question
-      for (i = 0; i < questionsArray.length; i++) {
-        currentQuestion = questionsArray[i].q;
-        currentChoices = questionsArray[i].choices;
-        questionDiv = $("#question");
-        choicesDiv = $("#btn");
-        var newQuestion = $("<div>").addClass("card");
-        var newChoice =  $("<input type='radio'>")
-         newQuestion.text(currentQuestion);
-         newChoice.text(currentChoices);
-        $("#question").append(newQuestion);
-         $("#btn").append(questionsArray[i].choices);
+
+$("#startTimer").on("click", function(){ 
+
+var question = questionsArray[currentQuestion].q;
+var choices = questionsArray[currentQuestion].choices;
+
+$("#question").html('<div class="card">'+ question + '</div>');
+$("#question").append('<p>'+ loadChoices(choices) + '</p>');
+);
 
 
+console.log(loadChoices(choices))
+counter = setTimeout(timeUp, 1000 * 10);
+$("#time").html("Time Remaining: " + counter); 
+
+ })
+
+function loadChoices(choices) {
+  for (i = 0; i < choices.length; i++) {
+  var result +=  '<p class="choice" data-answer="${choices[i]}">${cgiuces[i]}</p>';
+  }
+
+//   //newChoice.text(currentChoices);
+//  // $("#btn").append(questionsArray[i].choices);
+return result;
+//   }
+// }
+  
+// function loadChoices(choices) {
+//   var newQuestion = ""
+//       for (i = 0; i < questionsArray.length; i++) {
+//       //questionDiv = $("#question");
+//       var newQuestion = $("<div data-answer='{choices[i]}'>{choices[i]}</div>").addClass("card");
+//        return newQuestion  
+       
+         
+//       }
+// }
+//      
 //***********list questions on the page with all possible answers
    
         
         
         
         
-        console.log(questionsArray[i].choices)
+       
         
         
         //var options = questionsArray[j].choices;
@@ -54,13 +76,13 @@ $("#startTimer").on("click", function(){
         // }
         //$("question").text(currentQuestion);
         //console.log(currentQuestion)
-    }
+//     }
 
    
-});
-//**************end of timer */
+// });
+// //**************end of timer */
 function timeUp() {    
-    $("#time").html("<h2>Time's Up!</h2>");
+$("#time").html("<h2>Time's Up!</h2>");
 }
 
       
