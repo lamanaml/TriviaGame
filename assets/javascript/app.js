@@ -13,13 +13,7 @@ var questionsArray = [
 {q: "Which vegetable is zucchini better known as?", a: "Courgette",  choices: ["Courgette", "Cucumber", "Patty Pan Squash", "Spaghetti Squash"]}
 ]
       
-var currentQuestion = 0;
-var correctVar = 0;
-var incorrectVar = 0;
-var unansweredVar = 0;
-
-var timer;
-        
+       
 
 $("#startTimer").on("click",function() {
    $("#startTimer").remove();
@@ -28,41 +22,63 @@ $("#startTimer").on("click",function() {
     for(var i = 0; i < questionsArray.length; i++){
       $("#questionDiv").append('<h2>'+questionsArray[i].q+'<h2>')
       for(var j = 0; j < questionsArray[j].choices.length; j++){
-        $("#questionDiv").append(" <input type='radio' data-answer= " + questionsArray[i].a + " name='question-" + i + "' value='" + questionsArray[i].choices[j] + "' > " + questionsArray[i].choices[j])
+        $("#questionDiv").append(" <input type='radio' " + "name='question-" +i+ "' value='" + questionsArray[i].choices[j] + "' > " + questionsArray[i].choices[j])
       }
     }
+     $("#done").append('<button id="done">Done</button>');
  })
 
 
 var game = {
   correct: 0,
   incorrect: 0,
-  counter: 120,
+  counter: 5,
   countdown: function(){
     game.counter--;
     $('#time').html("Time Remaining: " + game.counter);
-    if(game.counter<=0){
+    if (game.counter <= 0){
         console.log("Time is Up!");
         game.done();
     }
   },
-start: function(){
-  timer = setInterval(game.countdown, 1000);
-  $("#startTimer").on("click",function() {
-    $("#startTimer").remove();
-  game.start()
+  start: function(){
+    timer = setInterval(game.countdown, 1000);
+    $("#startTimer").on("click",function() {
+        $("#startTimer").remove();
+          for(var i = 0; i < questionsArray.length; i++){
+          $("#questionDiv").append('<h2>'+questionsArray[i].q+'<h2>')
+          for(var j = 0; j < questionsArray[j].choices.length; j++){
+             $("#questionDiv").append(" <input type='radio'  " +  "name='question-" +i+ "' value='" + questionsArray[i].choices[j] + "' > " + questionsArray[i].choices[j])
 
-  for(var i = 0; i < questionsArray.length; i++){
-      $("#questionDiv").append('<h2>'+questionsArray[i].q+'<h2>')
-      for(var j = 0; j < questionsArray[j].choices.length; j++){
-         $("#questionDiv").append(" <input type='radio' data-answer= " + questionsArray[i].a + " name='question-" + i + "' value='" + questionsArray[i].choices[j] + "' > " + questionsArray[i].choices[j])
-      }
+          }
+         }
+        
+    })        
+  },
+  done:function() {
+  console.log("in done function")
+  console.log(questionsArray[0].a)
+  
+
+     $.each($("input[name='question-0']:checked"), function () {
+         if ($(this).val() == questionsArray[0].a) {
+           console.log(true)
+        correct++;
+        } else {
+            incorrect++;
+        }
+    });
+   this.result()
     }
- })        
+
+  }
+  function result() {
+    console.log("results function")
+    clearInterval(timer);
+    $("#showResults").append('<h3> Correct Answers: ' + this.correct + '</h3>');
+    $("#showResults").append('<h3> Incorrect Answers: ' + this.incorrect + '</h3>');
+    $("#showResults").append('<h3> Unanswered: ' + (questionsArray.length - (this.incorrect + this.correct)) + '</h3>');       
 }
-}
-          
- 
 
    
 //***********once answer is selected, check to see if the answer is correct.
