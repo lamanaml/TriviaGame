@@ -35,7 +35,7 @@ $("#done").on("click",function() {
 var game = {
   //correct: 0,
   //incorrect: 0,
-  counter: 20,
+  counter: 30,
   countdown: function(){
     game.counter--;
     $('#time').html("Time Remaining: " + game.counter);
@@ -152,29 +152,11 @@ var game = {
     
     clearInterval(timer);
      $("#time").clear
-    $("#time").html('<h3> Correct Answers: ' + correct + '</h3>');
-    $("#time").append('<h3> Incorrect Answers: ' + incorrect + '</h3>');
-    $("#time").append('<h3> Unanswered: ' + (questionsArray.length - (incorrect + correct)) + '</h3>');       
+    $("#time").html('<h4> Correct Answers: ' + correct + '</h4>');
+    $("#time").append('<h4> Incorrect Answers: ' + incorrect + '</h4>');
+    $("#time").append('<h4> Unanswered: ' + (questionsArray.length - (incorrect + correct)) + '</h4>');       
 }
 
    
-//***********once answer is selected, check to see if the answer is correct.
-//***********unansweredvar = # of questions
-// ***********if correct correctvar ++ && unansweredvar --
-// ***********if incorrect incorrectvar ++ ++ && unansweredvar --
-//***********if unansweredvar = 0 && timer > 0, user wins
-// ***********of unanswered > 0 && timer = 0, user loses
-//***********show stats
-//************* end Psuedocode *********************
-
-
-
-
-//********** end set timer */
-
-
-//*--------------------run functions----------------------  */
-
-
 
 });
