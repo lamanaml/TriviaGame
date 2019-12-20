@@ -17,4 +17,4 @@ JQuery
 ```
 
 ## Live Site
-http://lamanadonadelle.com/foodtrivia/
+http://lamanadonadelle.com/TriviaGame/
